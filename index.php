@@ -7,19 +7,11 @@
 </head>
 
 <body>
-    <form action="index.php" method="post">
+    <form action="frage1.php" method="post">
         <label for="benutzername">Benutzername: </label>
         <input type="text" id="name" name="nameInput">
-       <!-- <a href="C:\xampp\htdocs\quiz\frage1.php"><input type="submit" value="Login und Quiz starten"></a>-->
         <input type="submit" value="Login und Quiz starten">
-        <button onclick="openNewPage()"> Next </button>
     </form>
-
-<script>
-    function openNewPage(){
-        window.location.href="C:\xampp\htdocs\quiz\frage1.php";
-    }
-</script>
 
 <?php
 if (!empty ($_POST)){

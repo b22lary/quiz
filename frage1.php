@@ -19,6 +19,25 @@
 		<input type="submit" value="weiter">
 	</form>
 
-	<
+	<?php
+	if(isset($_POST['submit'])){
+		if (isset($_POST['Architekten'])){
+			$auswahl=$_POST['Architekten'];
+			echo $auswahl;
+			/*try{
+				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+				$username = 'root';
+				$password = '';
+				$dbh = new \PDO($dsn, $username, $password);
+				
+				$statement = $dbh->prepare("INSERT INTO quizdaten(benutzername, frage1, frage2, frage3, frage4, frage5, frage6, frage7, frage8, endergebnis) VALUES(?,?,?,?,?,?,?,?,?,?)");
+				$statement->execute(array($name,$frageEins,false,true,true,true,true,true,true,8));   
+			}catch(\Throwable $e){
+		
+			}*/
+		}
+	}
+	?>
+	
 </body>
 </html>
