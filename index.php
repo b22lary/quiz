@@ -13,7 +13,7 @@
         <input type="submit" value="Login und Quiz starten">
     </form>
 
-    <!--test von Nina -->
+    
 <?php
 if (!empty ($_POST)){
     $name = $_POST['nameInput'];
