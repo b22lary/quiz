@@ -28,7 +28,7 @@ if (!empty ($_POST)){
         $statement->execute(array($name,true,false,true,true,true,true,true,true,8));   
     }catch(\Throwable $e){
 
-    }
+    }//testetst
 }
 ?>
 </body>
