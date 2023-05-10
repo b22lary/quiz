@@ -1,0 +1,13 @@
+CREATE TABLE quizdaten(
+	benutzername varchar(50) NOT NULL,
+    frage1 boolean,
+    frage2 boolean,
+    frage3 boolean,
+    frage4 boolean,
+    frage5 boolean,
+    frage6 boolean,
+    frage7 boolean,
+    frage8 boolean,
+    endergebnis int,
+    PRIMARY KEY(benutzername)
+)
