@@ -97,32 +97,69 @@
 					item.addEventListener('drop', event =>{
 						item.removeAttribute('highlight')
 						let id= event.dataTransfer.getData('application/figure-id')
-  
+						let stadt=document.querySelector('Stadt Augsburg')
 						if (id){
 							item.appendChild(document.getElementById(id))
+								
+							function getOffset( el ) {
+								var _x = 0;
+								var _y = 0;
+								while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+									_x += el.offsetLeft - el.scrollLeft;
+									_y += el.offsetTop - el.scrollTop;
+									el = el.offsetParent;
+								}
+								return { top: _y, left: _x };
+							}
 
-							if(document.querySelector("Stadt Augsburg")){
-								if(id == "Fuggerei" || id == "Maiskolben" || id == "Rathaus")
-								{
+							var x = getOffset( document.getElementById(id) ).left;
+							var y = getOffset( document.getElementById(id) ).top;
+							console.log("x: "+ x);
+							console.log("y: "+ y);
+
+							if (x<100){
+								if(id == "Fuggerei" || id == "Maiskolben" || id == "Rathaus"){
 									console.log(true);
+									console.log(id);
+								}
+								else{
+									console.log(false);
+									console.log(id);
 								}
 							}
+							else if(x>=100 && x<700){
+								if(id == "Café Müller" || id == "Mandichosee" || id == "Mercateum"){
+									console.log(true);
+									console.log(id);
+								}
+								else{
+									console.log(false);
+									console.log(id);
+								}
+							}
+							else if(x>=7   00){
+								if(id == "Altstadt" || id == "Kirche" || id == "Stadtbrunnen"){
+									console.log(true);
+									console.log(id);
+								}
+								else{
+									console.log(false);
+									console.log(id);
+								}	
+							}				
 						}
+							
+						
+						
 						
 					})
 				})
-				
+
 		</script>
 
 
 		<script>
-			function isCorrect(imgageName){
-						if(imageName == "Fuggerei" || imageName == "Maiskolben" || imageName == "Rathhaus")
-						{
-							console.log(true);
-						}
-					
-				}
+			
 		</script>
     </body>
 </html>
