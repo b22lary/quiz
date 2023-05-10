@@ -7,7 +7,7 @@
 </head>
 
 <body>
-        <form action="Index.php" method="post">
+        <form action="index.php" method="post">
 
             <label for="benutzername">Benutzername: </label>
             <input type="text" id="name" name="nameInput">
