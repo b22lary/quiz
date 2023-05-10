@@ -68,8 +68,10 @@
             ?>
         </main>
         <footer title="Quellen">
+			<!--
             Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a>
             from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a>
+			-->
         </footer>
         <script>
 				let fieldsets=document.querySelectorAll('fieldset')
@@ -118,7 +120,7 @@
 							console.log("x: "+ x);
 							console.log("y: "+ y);
 
-							if (x<100){
+							if (x<300){
 								if(id == "Fuggerei" || id == "Maiskolben" || id == "Rathaus"){
 									console.log(true);
 									console.log(id);
@@ -128,7 +130,7 @@
 									console.log(id);
 								}
 							}
-							else if(x>=100 && x<700){
+							else if(x>=300 && x<850){
 								if(id == "Café Müller" || id == "Mandichosee" || id == "Mercateum"){
 									console.log(true);
 									console.log(id);
