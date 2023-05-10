@@ -31,6 +31,7 @@
 </style>
     <body>
         <header title="Bilder">
+			<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
 <?php     
 
                 foreach (scandir('images') as $file)
@@ -137,7 +138,7 @@
 									console.log(id);
 								}
 							}
-							else if(x>=7   00){
+							else if(x>=700){
 								if(id == "Altstadt" || id == "Kirche" || id == "Stadtbrunnen"){
 									console.log(true);
 									console.log(id);
@@ -148,18 +149,50 @@
 								}	
 							}				
 						}
-							
-						
-						
 						
 					})
 				})
 
 		</script>
+<?php
+	session_start();
+	$name = $_SESSION['name'];
+	echo $name;
+	
+    // if (isset($_POST['Väterchen_Frost']) || isset($_POST['Rumpelstilzchen']) || isset($_POST['Urmel']) || isset($_POST['Aschenputtel']) || isset($_POST['Lukas'])){
+    //     if(isset($_POST['Lukas']) && isset($_POST['Urmel']) && !isset($_POST['Väterchen_Frost']) && !isset($_POST['Rumpelstilzchen']) && !isset($_POST['Aschenputtel'])){
+    //         try{
+    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+    //             $username = 'root';
+    //             $password = '';
+    //             $dbh = new \PDO($dsn, $username, $password);
+                
+    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
+    //             $statement->execute(); 
+    //             header("Location: frage7.php");
 
+    //         }catch(\Throwable $e){
+        
+    //         }
+    //     }else{
+    //         try{
+    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+    //             $username = 'root';
+    //             $password = '';
+    //             $dbh = new \PDO($dsn, $username, $password);
+                
+    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
+    //             $statement->execute(); 
+    //             header("Location: frage8.php");
 
-		<script>
-			
-		</script>
+    //         }catch(\Throwable $e){
+        
+    //         }
+    //     }
+    // }
+    
+
+    
+	?>
     </body>
 </html>
