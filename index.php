@@ -27,7 +27,7 @@ if (!empty($_POST)) {
         $dbh = new \PDO($dsn, $username, $password);
 
         $statement = $dbh->prepare("INSERT INTO quizdaten(benutzername, frage1, frage2, frage3, frage4, frage5, frage6, frage7, frage8, endergebnis) VALUES(?,?,?,?,?,?,?,?,?,?)");
-        $statement->execute(array($name, null, null, null, null, null, null, null, null, 8));
+        $statement->execute(array($name, null, null, null, null, null, null, null, null, 0));
 
         $_SESSION['name'] = $name;
 
