@@ -24,7 +24,7 @@
 	$name = $_SESSION['name'];
 	echo $name;
     if (isset($_POST['Jona']) || isset($_POST['Johann']) || isset($_POST['Josef']) || isset($_POST['David']) || isset($_POST['Matthäus'])){
-        if(isset($_POST['Johann']) && isset($_POST['Matthäus'])){
+        if(isset($_POST['Johann']) && isset($_POST['Matthäus']) && isset($_POST['Jona']) && !isset($_POST['Josef']) && !isset($_POST['David'])){
             try{
                 $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
                 $username = 'root';
