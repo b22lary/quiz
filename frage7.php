@@ -31,7 +31,7 @@
 </style>
     <body>
         <header title="Bilder">
-			<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
+		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
 <?php     
 
                 foreach (scandir('images') as $file)
@@ -50,6 +50,7 @@
             ?>
          </header>
          <main title="Content">
+		 
 <?php
                 function create_category($cat)
                 {
@@ -66,6 +67,7 @@
                 create_category('Umkreis Augsburg');
                 create_category('weit entfernt');
             ?>
+			<input type="submit" value="weiter" name="weiter">
         </main>
         <footer title="Quellen">
 			<!--
@@ -171,7 +173,7 @@
                 
     //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
     //             $statement->execute(); 
-    //             header("Location: frage7.php");
+    //             header("Location: frage8.php");
 
     //         }catch(\Throwable $e){
         
