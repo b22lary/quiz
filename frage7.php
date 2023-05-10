@@ -2,10 +2,9 @@
 <html lang="de">
     
 	<head>
-        <meta charset="utf-8" name="author" content="L.Bergsiek">
-        <meta name="description" content="Übung 2 / Aufgabe 4">
-        <title>Quiz</title>
-        <link rel="stylesheet" href="Aufgabe5.css">
+		<meta charset ="utf-8">
+		<meta name = "author" content = "Larissa, Nina, Lucas">
+		<title>Augsburg Quiz</title>
 	</head>
 	<style>
 		figure{
