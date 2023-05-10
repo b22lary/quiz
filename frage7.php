@@ -5,6 +5,7 @@
 		<meta charset ="utf-8">
 		<meta name = "author" content = "Larissa, Nina, Lucas">
 		<title>Augsburg Quiz</title>
+
 	</head>
 	<style>
 		figure{
@@ -53,7 +54,7 @@
                 {
                     echo
 "               <section title='$cat'>
-                    <fieldset>
+                    <fieldset id = '$cat'>
                         <legend>$cat</legend>
                     </fieldset>
                 </section>" . PHP_EOL;
@@ -79,7 +80,6 @@
 				figures.forEach(item =>{
 					item.setAttribute('draggable', true)
 					item.addEventListener('dragstart', event =>{
-						console.log(item.id)
 						event.dataTransfer.setData('application/figure-id', item.id)
 					})
 				})
@@ -87,20 +87,42 @@
 				fieldsets.forEach(item=>{
 					item.addEventListener('dragover', event =>
 					event.preventDefault())
+
 					item.addEventListener('dragenter', event =>
 					item.setAttribute('hightlight', true))
+
 					item.addEventListener('dragleave', event =>
 					item.removeAttribute('highlight'))
+
 					item.addEventListener('drop', event =>{
 						item.removeAttribute('highlight')
 						let id= event.dataTransfer.getData('application/figure-id')
+  
 						if (id){
 							item.appendChild(document.getElementById(id))
+
+							if(document.querySelector("Stadt Augsburg")){
+								if(id == "Fuggerei" || id == "Maiskolben" || id == "Rathaus")
+								{
+									console.log(true);
+								}
+							}
 						}
+						
 					})
 				})
+				
 		</script>
 
 
+		<script>
+			function isCorrect(imgageName){
+						if(imageName == "Fuggerei" || imageName == "Maiskolben" || imageName == "Rathhaus")
+						{
+							console.log(true);
+						}
+					
+				}
+		</script>
     </body>
 </html>
