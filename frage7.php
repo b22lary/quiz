@@ -32,7 +32,7 @@
     <body>
         <header title="Bilder">
 		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
-<?php     
+			<?php     
 
                 foreach (scandir('images') as $file)
                     if (is_file("images/$file"))
@@ -51,15 +51,15 @@
          </header>
          <main title="Content">
 		 
-<?php
+			<?php
                 function create_category($cat)
                 {
                     echo
-"               <section title='$cat'>
-                    <fieldset id = '$cat'>
-                        <legend>$cat</legend>
-                    </fieldset>
-                </section>" . PHP_EOL;
+"             		  <section title='$cat'>
+                  		  <fieldset id = '$cat'>
+                  	      <legend>$cat</legend>
+                  		  </fieldset>
+               		  </section>" . PHP_EOL;
                 //Anstelle von einem Umbruch den PHP_EOL-Befehl verwenden oder auch Tabulatoren zum Formatieren "\t"
                 }
 
@@ -67,13 +67,15 @@
                 create_category('Umkreis Augsburg');
                 create_category('weit entfernt');
             ?>
-			<input type="submit" value="weiter" name="weiter">
+
         </main>
+
         <footer title="Quellen">
 			<form action="frage7.php" method = post>
 				<input type="submit" value="weiter" name="weiter">
 			</form>
         </footer>
+		
         <script>
 				let fieldsets=document.querySelectorAll('fieldset')
 				let figures=document.querySelectorAll('figure')
@@ -121,10 +123,22 @@
 							console.log("x: "+ x);
 							console.log("y: "+ y);
 
+							let array = [];
+
 							if (x<300){
-								if(id == "Fuggerei" || id == "Maiskolben" || id == "Rathaus"){
+								if(id == "Fuggerei"){
 									console.log(true);
 									console.log(id);
+									array[0]=true;
+								}else if(id == "Maiskolben"){
+									console.log(true);
+									console.log(id);
+									array[1]=true;
+								}else if(id == "Rathaus"){
+									console.log(true);
+									console.log(id);
+									array[2]=true;
+									console.log(array[2])
 								}
 								else{
 									console.log(false);
@@ -157,46 +171,6 @@
 				})
 
 		</script>
-<?php
-	session_start();
-	$name = $_SESSION['name'];
-	echo $name;
-	
-    // if (isset($_POST['Väterchen_Frost']) || isset($_POST['Rumpelstilzchen']) || isset($_POST['Urmel']) || isset($_POST['Aschenputtel']) || isset($_POST['Lukas'])){
-    //     if(isset($_POST['Lukas']) && isset($_POST['Urmel']) && !isset($_POST['Väterchen_Frost']) && !isset($_POST['Rumpelstilzchen']) && !isset($_POST['Aschenputtel'])){
-    //         try{
-    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-    //             $username = 'root';
-    //             $password = '';
-    //             $dbh = new \PDO($dsn, $username, $password);
-                
-    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
-    //             $statement->execute(); 
-    //             header("Location: frage8.php");
-
-    //         }catch(\Throwable $e){
-        
-    //         }
-    //     }else{
-    //         try{
-    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-    //             $username = 'root';
-    //             $password = '';
-    //             $dbh = new \PDO($dsn, $username, $password);
-                
-    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
-    //             $statement->execute(); 
-    //             header("Location: frage8.php");
-
-    //         }catch(\Throwable $e){
-        
-    //         }
-    //     }
-    // }
-    
-
-    
-	?>
 
 <?php
 	session_start();
