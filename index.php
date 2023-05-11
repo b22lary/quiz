@@ -4,16 +4,20 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-        <form action="index.php" method="post">
-
-            <label for="benutzername">Benutzername: </label>
-            <input type="text" id="name" name="nameInput">
-            <input type="submit" value="Login und Quiz starten">
-
+<body class="bodyIndex">
+    <div class="login-wrapper">
+        <form action="index.php" method="post" class="form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" id="name" name="nameInput" required>
+                <label for="benutzername">Benutzername: </label>
+            </div>
+            <input type="submit" value="Login und Quiz starten" class="submit-btn">
         </form>
+    </div>
 <?php
 session_start();
 
