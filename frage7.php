@@ -31,7 +31,8 @@
 </style>
     <body>
         <header title="Bilder">
-			<?php     
+		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
+<?php     
 
                 foreach (scandir('images') as $file)
                     if (is_file("images/$file"))
@@ -49,7 +50,8 @@
             ?>
          </header>
          <main title="Content">
-			<?php
+		 
+<?php
                 function create_category($cat)
                 {
                     echo
@@ -65,6 +67,7 @@
                 create_category('Umkreis Augsburg');
                 create_category('weit entfernt');
             ?>
+			<input type="submit" value="weiter" name="weiter">
         </main>
         <footer title="Quellen">
 			<form action="frage7.php" method = post>
@@ -138,7 +141,7 @@
 									console.log(id);
 								}
 							}
-							else if(x>=850){
+							else if(x>=700){
 								if(id == "Altstadt" || id == "Kirche" || id == "Stadtbrunnen"){
 									console.log(true);
 									console.log(id);
@@ -149,13 +152,53 @@
 								}	
 							}				
 						}
+						
 					})
 				})
 
 		</script>
+<?php
+	session_start();
+	$name = $_SESSION['name'];
+	echo $name;
+	
+    // if (isset($_POST['Väterchen_Frost']) || isset($_POST['Rumpelstilzchen']) || isset($_POST['Urmel']) || isset($_POST['Aschenputtel']) || isset($_POST['Lukas'])){
+    //     if(isset($_POST['Lukas']) && isset($_POST['Urmel']) && !isset($_POST['Väterchen_Frost']) && !isset($_POST['Rumpelstilzchen']) && !isset($_POST['Aschenputtel'])){
+    //         try{
+    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+    //             $username = 'root';
+    //             $password = '';
+    //             $dbh = new \PDO($dsn, $username, $password);
+                
+    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
+    //             $statement->execute(); 
+    //             header("Location: frage8.php");
 
+    //         }catch(\Throwable $e){
+        
+    //         }
+    //     }else{
+    //         try{
+    //             $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+    //             $username = 'root';
+    //             $password = '';
+    //             $dbh = new \PDO($dsn, $username, $password);
+                
+    //             $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
+    //             $statement->execute(); 
+    //             header("Location: frage8.php");
 
-	<?php
+    //         }catch(\Throwable $e){
+        
+    //         }
+    //     }
+    // }
+    
+
+    
+	?>
+
+<?php
 	session_start();
 	$name = $_SESSION['name'];
 	echo $name;
@@ -200,6 +243,5 @@
 		}
 	}
 	?>
-
     </body>
 </html>
