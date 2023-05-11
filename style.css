@@ -3,13 +3,12 @@
     padding:0;
     box-sizing: border-box;
 }
-
+/* Index.php bzw. Styles zur Startseite/ Login */
 .bodyIndex{
     background:url(images/skyline.png);
     background-size:cover;
     font-family: sans-serif;
 }
-
 .login-wrapper{
     height:100vh;
     width:100vw;
@@ -18,7 +17,6 @@
     align-items: center;
     padding-bottom: 200px;
 }
-
 .form{
     position:relative;
     width:100%;
@@ -29,7 +27,6 @@
     color:'fff';
     box-shadow: 0 15px 25px rgba(32, 129, 63, 0.5);
 }
-
 .form::before{
     content: '';
     position: absolute;
@@ -43,7 +40,6 @@
     border-radius: 10px;
     pointer-events:none;
 }
-
 .form h2{
     font-size: 2rem;
     text-align: center;
@@ -51,11 +47,9 @@
     margin-bottom: 2rem;
     color:#ff2f2f;
 }
-
 .form .input-group{
     position:relative;
 }
-
 .form .input-group input {
     width:100%;
     padding: 10px 0;
@@ -68,7 +62,6 @@
     background-color: transparent;
     color:black;
 }
-
 .form .input-group label {
     position: absolute;
     top:0;
@@ -79,14 +72,12 @@
     transition: .3s ease-out;
     color: black;
 }
-
 .form .input-group input:focus + label, 
 .form .input-group input:valid + label{
     transform: translateY(-18px);
     color:white;
     font-size:.8rem;
 }
-
 .submit-btn{
     display: block; 
     margin-left: 10px;
@@ -99,4 +90,76 @@
     border-radius: 5px;
     cursor: pointer;
     background-color:#ff2f2f;
+}
+
+
+
+/* Styles für die Frage 1 */
+.bodyFrage1{
+    font-family: sans-serif;
+    font-size: 16px;
+    /* background:lightgreen; */
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background:url(images/skyline.png);
+    background-size:cover;
+    font-family: sans-serif;
+}
+
+.quiz-container{
+    width:60%;
+    margin: 0 auto;
+    padding-top: 40px;
+    
+}
+h1{
+    padding-bottom: 10px;
+    text-align: center;
+}
+.question{
+    margin-left:25%;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #ff2f2f;
+    padding: 20px;
+    box-shadow: 0 0 10px 2px white;
+    /* display:flex; //verschiebt es so, dass Frage links steht und Antworten rechts davon*/
+    
+}
+
+.question p{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    }
+.answers{
+    margin-top: 20px; 
+}
+.answers label:not(:first-child){
+    border-top: 1px solid #e0e0e0;
+}
+label{
+    padding:15px;
+    display: block;
+}
+input[type="radio"]{
+    margin-right: 10px;
+}
+#submit-btn{
+    display:block;
+    margin-bottom: 20px auto;
+    padding: 1.1rem;
+    background: #4caf50;
+    color:#fff;
+    border:none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+
+    cursor:pointer;
+    width:100%;
+}
+#submit-btn:hover{
+    background:rgb(192, 195, 190);
 }

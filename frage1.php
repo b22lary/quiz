@@ -4,19 +4,34 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 1</p>
-	<p> Wer hat das Rathaus gebaut?</p>
-	<form action = "frage1.php" method = "post">
+<body class="bodyFrage1">
+	<div class="quiz-container">
+		<h1>Augsburg Quiz - Frage 1</h1>
+		<hr>
+			<form action = "frage1.php" method = "post" id="quiz-form">
+					<div class="question">
+						<p> Wer hat das Rathaus gebaut?</p>
+						<div class="answers">
+							<label>
+								<input type="radio" value="true" name="Architekten">
+								Elias Holl 
+							</label>
+							<label>
+								<input type="radio" value="false" name="Architekten">
+								Burkhart Engelberg
+							</label>
+							<label>
+								<input type="radio" value="false" name="Architekten">
+								Jakob Fugger
+							</label>		
+						</div>
+					</div>
+				<input type="submit" value="weiter" name="weiter" id="submit-btn">
+			</form>
+	</div>
 
-		<input type="radio" value="true" name="Architekten"><label> Elias Holl </label><br>
-		<input type="radio" value="false" name="Architekten"><label> Burkhart Engelberg </label><br>
-		<input type="radio" value="false" name="Architekten"><label> Jakob Fugger </label><br>
-		<input type="submit" value="weiter" name="weiter">
-
-	</form>
-	
 	<?php
 	session_start();
 	$name = $_SESSION['name'];
