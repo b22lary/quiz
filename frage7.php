@@ -118,7 +118,7 @@
         <footer title="Quellen">
 			<form action="frage7.php" method = "post">
 				<input type="submit" value="weiter" name="weiter">
-				<input type="submit" id= "richtigInput" name ="richtigInput" value="false">
+				<input type="hidden" id= "richtigInput" name ="richtigInput" value="false">
 
 			</form>
         </footer>
