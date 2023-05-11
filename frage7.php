@@ -29,6 +29,52 @@
 			border-style: dashed;
 		}
 </style>
+
+<?php
+	session_start();
+	$name = $_SESSION['name'];
+	echo $name;
+
+	if (isset($_POST["weiter"])){
+		$richtig = $_POST['richtigInput'];
+
+		if($richtig){
+			try {
+				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+				$username = 'root';
+				$password = '';
+				$dbh = new \PDO($dsn, $username, $password);
+  
+				$statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
+				$statement->execute(); 
+    
+				header("Location: frage8.php");
+				exit();
+			} catch (\Throwable $e) {
+				// Fehlerbehandlung
+			}
+		}
+		else
+		{
+			try {
+				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+				$username = 'root';
+				$password = '';
+				$dbh = new \PDO($dsn, $username, $password);
+  
+				$statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
+				$statement->execute(); 
+  
+				header("Location: frage8.php");
+				exit();
+			} catch (\Throwable $e) {
+				// Fehlerbehandlung
+			}
+		}
+
+	}
+?>
+
     <body>
         <header title="Bilder">
 		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
@@ -70,8 +116,10 @@
         </main>
 
         <footer title="Quellen">
-			<form action="frage7.php" method = post>
+			<form action="frage7.php" method = "post">
 				<input type="submit" value="weiter" name="weiter">
+				<input type="submit" id= "richtigInput" name ="richtigInput" value="false">
+
 			</form>
         </footer>
 
@@ -79,8 +127,7 @@
 			var x;
 			var y;
 			var array = [false, false, false, false, false, false, false, false, false];
-			var alleTrue = false;
-			var xhr = new XMLHttpRequest();
+			var allesRichtig = false;
 
 			let fieldsets=document.querySelectorAll('fieldset')
 			let figures=document.querySelectorAll('figure')
@@ -129,15 +176,13 @@
 						console.log("y: "+ y);
 
 						checkCorrect(id);
-						alleTrue = array.every((wert) => wert === true);
-						console.log(alleTrue)
 
-						xhr.open("POST", "", true);
-						xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-						xhr.send("alleTrue=" + alleTrue);
+						allesRichtig = array.every(element => element === true);
+						document.getElementById("richtigInput").value = allesRichtig;
 						}	
 					})
 				})
+
 
 			function checkCorrect(id){
 				switch(id) {
@@ -219,58 +264,6 @@
 
 		</script>
 
-<?php
-	session_start();
-	$name = $_SESSION['name'];
-	echo $name;
 
-
-	if(isset($_POST['alleTrue'])) {
-		$attribut = $_POST['alleTrue'];
-		// Hier können Sie das Attribut in der PHP-Datei verwenden
-		echo "Das Attribut lautet: " . $attribut;
-	  }
-	/*
-	if (isset($_POST["weiter"])){
-		if($name == 'test'){
-			try {
-				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-			  $username = 'root';
-				 $password = '';
-			  $dbh = new \PDO($dsn, $username, $password);
-  
-			  $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
-			  $statement->execute(); 
-  
-			  $_SESSION['name'] = $name;
-  
-				 header("Location: frage8.php");
-			  exit();
-		  } catch (\Throwable $e) {
-			  // Fehlerbehandlung
-		  }
-		}
-		else
-		{
-			try {
-				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-			  $username = 'root';
-				 $password = '';
-			  $dbh = new \PDO($dsn, $username, $password);
-  
-			  $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
-			  $statement->execute(); 
-  
-			  $_SESSION['name'] = $name;
-  
-				 header("Location: frage8.php");
-			  exit();
-		  } catch (\Throwable $e) {
-			  // Fehlerbehandlung
-		  }
-		}
-	}
-	*/
-	?>
     </body>
 </html>
