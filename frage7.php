@@ -31,7 +31,7 @@
 </style>
     <body>
         <header title="Bilder">
-<?php     
+			<?php     
 
                 foreach (scandir('images') as $file)
                     if (is_file("images/$file"))
@@ -49,7 +49,7 @@
             ?>
          </header>
          <main title="Content">
-<?php
+			<?php
                 function create_category($cat)
                 {
                     echo
@@ -67,10 +67,9 @@
             ?>
         </main>
         <footer title="Quellen">
-			<!--
-            Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a>
-            from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a>
-			-->
+			<form action="frage7.php" method = post>
+				<input type="submit" value="weiter" name="weiter">
+			</form>
         </footer>
         <script>
 				let fieldsets=document.querySelectorAll('fieldset')
@@ -150,18 +149,57 @@
 								}	
 							}				
 						}
-							
-						
-						
-						
 					})
 				})
 
 		</script>
 
 
-		<script>
-			
-		</script>
+	<?php
+	session_start();
+	$name = $_SESSION['name'];
+	echo $name;
+
+	if (isset($_POST["weiter"])){
+		if($name == 'test'){
+			try {
+				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+			  $username = 'root';
+				 $password = '';
+			  $dbh = new \PDO($dsn, $username, $password);
+  
+			  $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
+			  $statement->execute(); 
+  
+			  $_SESSION['name'] = $name;
+  
+				 header("Location: frage8.php");
+			  exit();
+		  } catch (\Throwable $e) {
+			  // Fehlerbehandlung
+		  }
+		}
+		else
+		{
+			try {
+				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+			  $username = 'root';
+				 $password = '';
+			  $dbh = new \PDO($dsn, $username, $password);
+  
+			  $statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
+			  $statement->execute(); 
+  
+			  $_SESSION['name'] = $name;
+  
+				 header("Location: frage8.php");
+			  exit();
+		  } catch (\Throwable $e) {
+			  // Fehlerbehandlung
+		  }
+		}
+	}
+	?>
+
     </body>
 </html>
