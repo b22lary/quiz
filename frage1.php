@@ -6,7 +6,7 @@
 	<title>Augsburg Quiz</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body class="bodyFrage1">
+<body class="bodyFrage1Frage2">
 	<div class="quiz-container">
 		<h1>Augsburg Quiz - Frage 1</h1>
 		<hr>

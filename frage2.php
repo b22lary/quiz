@@ -4,18 +4,33 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 2</p>
-	<p>Was ist der "Stoinerne Mo in der Hand"?</p>
-
-	<form action="frage2.php" method = post>
-	
-		<input type="radio" value="false" name="Stoinerne_Mo"><label> Warze an der Hand </label><br>
-		<input type="radio" value="true" name="Stoinerne_Mo"><label> Brotzeit </label><br>
-		<input type="radio" value="false" name="Stoinerne_Mo"><label> Vertrocknetes Moß </label><br>
-		<input type="submit" value="weiter" name="weiter">
-	</form>
+<body class="bodyFrage1Frage2">
+	<div class="quiz-container">
+		<h1>Augsburg Quiz - Frage 2</h1>
+		<hr>
+			<form action="frage2.php" method = post id="quiz-form">
+				<div class="question">
+					<p>Was ist der "Stoinerne Mo in der Hand"?</p>
+					<div class="answers">
+						<label>
+							<input type="radio" value="false" name="Stoinerne_Mo">
+							Warze an der Hand
+						</label>
+						<label>
+							<input type="radio" value="true" name="Stoinerne_Mo">
+							Brotzeit
+						</label>
+						<label>
+							<input type="radio" value="false" name="Stoinerne_Mo">
+							Vertrocknetes Moß
+						</label>
+					</div>
+				</div>
+				<input type="submit" value="weiter" name="weiter" id="submit-btn">
+			</form>
+	</div>
 	<?php
 	session_start();
 	$name = $_SESSION['name'];
