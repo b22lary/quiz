@@ -24,7 +24,7 @@
 			clear: left;
 			padding-top:5px;
 		}
-		[hightlight] {
+		[highlight] {
 			border-color: red;
 			border-style: dashed;
 		}
@@ -42,7 +42,7 @@
 
                         echo "
                     <figure id='$basename'>
-                    <image src='images/$file' height='100' witdh='100' alt='$caption'>
+                    <img src='images/$file' height='100' alt='$caption'/>
                     <figcaption>$caption</figcaption>
                     </figure>" . PHP_EOL;
                     }
@@ -54,13 +54,12 @@
 			<?php
                 function create_category($cat)
                 {
-                    echo
+                    echo 
 "             		  <section title='$cat'>
-                  		  <fieldset id = '$cat'>
+                  		  <fieldset id = '$cat' title='$cat'>
                   	      <legend>$cat</legend>
                   		  </fieldset>
                		  </section>" . PHP_EOL;
-                //Anstelle von einem Umbruch den PHP_EOL-Befehl verwenden oder auch Tabulatoren zum Formatieren "\t"
                 }
 
                 create_category('Stadt Augsburg');
@@ -75,100 +74,148 @@
 				<input type="submit" value="weiter" name="weiter">
 			</form>
         </footer>
-		
+
         <script>
-				let fieldsets=document.querySelectorAll('fieldset')
-				let figures=document.querySelectorAll('figure')
-				//dragstart (Beginn einer Drag&Drop Operation)
-				//dragover (Zeigt an, dass ein gedraggedtes Objekt über einem potentiellen Ziel ist)
-				//drop (Element wird fallen gelassen, über passendem Ziel)
+			var x;
+			var y;
+			var array = [false, false, false, false, false, false, false, false, false];
+			var alleTrue = false;
+			var xhr = new XMLHttpRequest();
 
-				figures.forEach(item =>{
-					item.setAttribute('draggable', true)
-					item.addEventListener('dragstart', event =>{
-						event.dataTransfer.setData('application/figure-id', item.id)
-					})
+			let fieldsets=document.querySelectorAll('fieldset')
+			let figures=document.querySelectorAll('figure')
+			//dragstart (Beginn einer Drag&Drop Operation)
+			//dragover (Zeigt an, dass ein gedraggedtes Objekt über einem potentiellen Ziel ist)
+			//drop (Element wird fallen gelassen, über passendem Ziel)
+
+			figures.forEach(item =>{
+			item.setAttribute('draggable', true)
+			item.addEventListener('dragstart', event =>{
+					event.dataTransfer.setData('application/figure-id', item.id)
 				})
+			})
 
-				fieldsets.forEach(item=>{
-					item.addEventListener('dragover', event =>
-					event.preventDefault())
+			fieldsets.forEach(item=>{
+				item.addEventListener('dragover', event =>
+				event.preventDefault())
 
-					item.addEventListener('dragenter', event =>
-					item.setAttribute('hightlight', true))
+				item.addEventListener('dragenter', event =>
+				item.setAttribute('highlight', true))
 
-					item.addEventListener('dragleave', event =>
-					item.removeAttribute('highlight'))
+				item.addEventListener('dragleave', event =>
+				item.removeAttribute('highlight'))
 
-					item.addEventListener('drop', event =>{
-						item.removeAttribute('highlight')
-						let id= event.dataTransfer.getData('application/figure-id')
-						let stadt=document.querySelector('Stadt Augsburg')
-						if (id){
-							item.appendChild(document.getElementById(id))
+				item.addEventListener('drop', event =>{
+					//item.removeAttribute('highlight')
+					let id= event.dataTransfer.getData('application/figure-id')
+					let stadt=document.querySelector('#Stadt Augsburg')
+					if (id){
+						item.appendChild(document.getElementById(id))
 								
-							function getOffset( el ) {
-								var _x = 0;
-								var _y = 0;
-								while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-									_x += el.offsetLeft - el.scrollLeft;
-									_y += el.offsetTop - el.scrollTop;
-									el = el.offsetParent;
-								}
-								return { top: _y, left: _x };
+						function getOffset( el ) {
+							var _x = 0;
+							var _y = 0;
+							while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+								_x += el.offsetLeft - el.scrollLeft;
+								_y += el.offsetTop - el.scrollTop;
+								el = el.offsetParent;
 							}
-
-							var x = getOffset( document.getElementById(id) ).left;
-							var y = getOffset( document.getElementById(id) ).top;
-							console.log("x: "+ x);
-							console.log("y: "+ y);
-
-							let array = [];
-
-							if (x<300){
-								if(id == "Fuggerei"){
-									console.log(true);
-									console.log(id);
-									array[0]=true;
-								}else if(id == "Maiskolben"){
-									console.log(true);
-									console.log(id);
-									array[1]=true;
-								}else if(id == "Rathaus"){
-									console.log(true);
-									console.log(id);
-									array[2]=true;
-									console.log(array[2])
-								}
-								else{
-									console.log(false);
-									console.log(id);
-								}
-							}
-							else if(x>=300 && x<850){
-								if(id == "Café Müller" || id == "Mandichosee" || id == "Mercateum"){
-									console.log(true);
-									console.log(id);
-								}
-								else{
-									console.log(false);
-									console.log(id);
-								}
-							}
-							else if(x>=700){
-								if(id == "Altstadt" || id == "Kirche" || id == "Stadtbrunnen"){
-									console.log(true);
-									console.log(id);
-								}
-								else{
-									console.log(false);
-									console.log(id);
-								}	
-							}				
+							return { top: _y, left: _x };
 						}
-						
+
+						x = getOffset( document.getElementById(id) ).left;
+						y = getOffset( document.getElementById(id) ).top;
+						console.log("x: "+ x);
+						console.log("y: "+ y);
+
+						checkCorrect(id);
+						alleTrue = array.every((wert) => wert === true);
+						console.log(alleTrue)
+
+						xhr.open("POST", "", true);
+						xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						xhr.send("alleTrue=" + alleTrue);
+						}	
 					})
 				})
+
+			function checkCorrect(id){
+				switch(id) {
+  					case "Fuggerei":
+						if (x < 300) {
+  							array[0]=true;
+						}
+						else{
+							array[0]=false;
+						}
+					break;
+ 					case "Maiskolben":
+						if (x < 300) {
+ 					  		array[1]=true;
+						}
+						else{
+							array[1]=false;
+						}
+   					 break;
+ 					case "Rathaus":
+						if (x < 300) {
+							array[2]=true;
+						}
+						else{
+							array[2]=false;
+						}
+   					 break;
+					case "Café Müller":
+						if (x >= 300 && x < 850){
+  							array[3]=true;
+						}
+						else{
+							array[3]=false;
+						}
+					break;
+ 					case "Mandichosee":
+						if (x >= 300 && x < 850){
+							array[4]=true;
+						}
+						else{
+							array[4]=false;
+						}
+   					break;
+ 					case "Mercateum":
+						if (x >= 300 && x < 850){
+							array[5]=true;
+						}
+						else{
+							array[5]=false;
+						}
+   					break;
+					case "Altstadt":
+						if (x >= 700){
+  							array[6]=true;
+						}
+						else{
+							array[6]=false;
+						}
+					break;
+ 					case "Kirche":
+						if (x >= 700){
+							array[7]=true;
+						}
+						else{
+							array[7]=false;
+						}
+   					break;
+ 					case "Stadtbrunnen":
+						if (x >= 700){
+							array[8]=true;
+						}
+						else{
+							array[8]=false;
+						}
+   					break;
+			}
+			console.log(array);	
+		}
 
 		</script>
 
@@ -177,6 +224,13 @@
 	$name = $_SESSION['name'];
 	echo $name;
 
+
+	if(isset($_POST['alleTrue'])) {
+		$attribut = $_POST['alleTrue'];
+		// Hier können Sie das Attribut in der PHP-Datei verwenden
+		echo "Das Attribut lautet: " . $attribut;
+	  }
+	/*
 	if (isset($_POST["weiter"])){
 		if($name == 'test'){
 			try {
@@ -216,6 +270,7 @@
 		  }
 		}
 	}
+	*/
 	?>
     </body>
 </html>
