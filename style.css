@@ -6,8 +6,6 @@
 
 .bodyIndex{
     background:url(images/skyline.png);
-    /* object-position: center;
-    object-fit: cover; */
     background-size:cover;
     font-family: sans-serif;
 }
