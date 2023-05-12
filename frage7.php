@@ -30,51 +30,6 @@
 		}
 </style>
 
-<?php
-	session_start();
-	$name = $_SESSION['name'];
-	echo $name;
-
-	if (isset($_POST["weiter"])){
-		$richtig = $_POST['richtigInput'];
-
-		if($richtig){
-			try {
-				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-				$username = 'root';
-				$password = '';
-				$dbh = new \PDO($dsn, $username, $password);
-  
-				$statement = $dbh->prepare("UPDATE quizdaten SET frage7 = true WHERE benutzername = '$name'");
-				$statement->execute(); 
-    
-				header("Location: frage8.php");
-				exit();
-			} catch (\Throwable $e) {
-				// Fehlerbehandlung
-			}
-		}
-		else
-		{
-			try {
-				$dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
-				$username = 'root';
-				$password = '';
-				$dbh = new \PDO($dsn, $username, $password);
-  
-				$statement = $dbh->prepare("UPDATE quizdaten SET frage7 = false WHERE benutzername = '$name'");
-				$statement->execute(); 
-  
-				header("Location: frage8.php");
-				exit();
-			} catch (\Throwable $e) {
-				// Fehlerbehandlung
-			}
-		}
-
-	}
-?>
-
     <body>
         <header title="Bilder">
 		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
@@ -116,11 +71,10 @@
         </main>
 
         <footer title="Quellen">
-			<form action="frage7.php" method = "post">
-				<input type="submit" value="weiter" name="weiter">
-				<input type="hidden" id= "richtigInput" name ="richtigInput" value="false">
+			
+				<input type="submit" value="weiter" name="weiter" onclick="submit()">
+				<input type="text" id="nameInput" name="nameInput" value="false" hidden>
 
-			</form>
         </footer>
 
         <script>
@@ -128,6 +82,7 @@
 			var y;
 			var array = [false, false, false, false, false, false, false, false, false];
 			var allesRichtig = false;
+			let eingabe = document.getElementById("nameInput")
 
 			let fieldsets=document.querySelectorAll('fieldset')
 			let figures=document.querySelectorAll('figure')
@@ -177,11 +132,27 @@
 
 						checkCorrect(id);
 
-						allesRichtig = array.every(element => element === true);
-						document.getElementById("richtigInput").value = allesRichtig;
+						document.getElementById("nameInput").value = array.every(element => element === true);
+						eingabe = nameInput;
+
+						console.log(eingabe)
 						}	
 					})
 				})
+
+
+				function submit(){
+					
+					console.log(eingabe)
+
+					let xhr = new XMLHttpRequest();
+					xhr.open('POST', 'frage7_ueberarbeitet.php');
+					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+					console.log(nameInput.value)
+					window.location.href = "frage8.php";
+						
+				}
 
 
 			function checkCorrect(id){
