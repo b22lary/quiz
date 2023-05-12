@@ -146,7 +146,7 @@
 					console.log(eingabe)
 
 					let xhr = new XMLHttpRequest();
-					xhr.open('POST', 'frage7_ueberarbeitet.php');
+					xhr.open('POST', 'frage7_php.php');
 					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 					xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
 					console.log(nameInput.value)
