@@ -146,11 +146,11 @@
 					console.log(eingabe)
 
 					let xhr = new XMLHttpRequest();
-					xhr.open('POST', 'frage7_php.php');
+					xhr.open('POST', 'frage7.php');
 					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 					xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
 					console.log(nameInput.value)
-					window.location.href = "frage8.php";
+					window.location.href = "frage8.html";
 						
 				}
 
