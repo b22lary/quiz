@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+</head>
+<body>
+    <p>Frage 3</p>
+	<p>Wann wurde die Fuggerei von Jakob Fugger gestiftet?</p>
+
+
+		<label> Ihre Antwort: </label><input type="test" name="Eingabe" id="eingabe"><br>
+		<button onclick="submit()" type="submit">Weiter</button>
+        <input type="text" id="nameInput" name="nameInput" value="" hidden>
+
+
+    <script>
+        let eingabe = document.getElementById('eingabe')
+        var nameInput = document.getElementById('nameInput')
+    
+        function submit(){
+            if(eingabe.value){
+                
+                if(eingabe.value == "1521"){
+                nameInput.value = "true"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage3.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage4.html";
+                }
+                
+            }else {
+                nameInput.value = "false"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage3.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage4.html";
+                }
+            }
+            }else{
+                alert("Bitte geben sie etwas ein")
+            }
+            
+        }
+    </script>
+</body>
+</html>
