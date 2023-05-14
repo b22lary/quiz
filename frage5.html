@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+</head>
+<body>
+    <p>Frage 5</p>
+	<p>Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom?</p>
+	
+
+		<input type="checkbox" id="1"><label> Jona </label><br>
+		<input type="checkbox" id="2"><label> Johann </label><br>
+        <input type="checkbox" id="3"><label> Josef </label><br>
+        <input type="checkbox" id="4"><label> David </label><br>
+        <input type="checkbox" id="5"><label> Matthäus </label><br>
+		<button onclick="submit()" type="submit">Weiter</button>
+        <input type="text" id="nameInput" name="nameInput" value="" hidden>
+
+
+    <script>
+        let first = document.getElementById('1')
+        let second = document.getElementById('2')
+        let third = document.getElementById('3')
+        let fourth = document.getElementById('4')
+        let fifth = document.getElementById('5')
+        var nameInput = document.getElementById('nameInput')
+
+        console.log(first)
+    
+        function submit(){
+            if(first.checked || second.checked || third.checked || fourth.checked || fifth.checked){
+                
+                if(!first.checked && second.checked && !third.checked && !fourth.checked && fifth.checked){
+                nameInput.value = "true"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage5.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage6.html";
+                }
+                
+            }else {
+                nameInput.value = "false"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage5.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage6.html";
+                }
+            }
+            }else{
+                alert("Bitte wählen Sie mindestens eine Antwort aus")
+            }
+            
+        }
+    </script>
+	
+</body>
+</html>
