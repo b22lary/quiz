@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="bodyIndex">
+    <div class="login-wrapper">
+        <div class="form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" id="name" name="nameInput" required>
+                <label for="benutzername">Benutzername: </label>
+            </div>
+            <button onclick="submit()" class="submit-btn">Login </button>
+        </div>
+        <input type="text" id="nameInput" name="nameInput" value="" hidden>
+    </div>
+
+
+
+    <script>
+        let eingabe = document.querySelector('#name')
+
+        function submit(){
+            if (eingabe.value) {
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', 'index.php');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200 && xhr.responseText) {
+                        console.log(xhr.responseText);
+                    } else {
+                        console.error('Fehler beim Verarbeiten der Daten.');
+                    }
+                };
+                xhr.send('nameInput=' + encodeURIComponent(eingabe.value));
+            }
+            window.location.href = "frage1.html";
+        }
+    </script>
+</body>
+</html>
