@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+</head>
+<body>
+    <p>Frage 8</p>
+	<p>Was ist das UNESCO Weltkulturerbe von Augsburg?</p>
+	
+        <select id="myDropdown">
+            <option value="option0" selected></option>
+            <option value="option1">Fuggerei</option>
+            <option value="option2">Augsburger Dom</option>
+            <option value="option3">Wassermanagement-System</option>
+            <option value="option4">Perlachturm</option>
+         </select>
+         <input type="submit" value="weiter" name="weiter" onclick="submit()">
+         <input type="text" id="nameInput" name="nameInput" value="" hidden>
+<script>
+    let dropDown = document.getElementById("myDropdown")
+    var nameInput = document.getElementById('nameInput')
+
+    function submit(){
+        if(dropDown.value == "option3"){
+            nameInput.value = "true"
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'frage8.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+            console.log(nameInput.value)
+            window.location.href = "ergebnis.html";
+        }else if(dropDown.value == "option0"){
+            alert("Bitte wählen Sie etwas aus!")
+        }else{
+            nameInput.value = "false"
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'frage8.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+            console.log(nameInput.value)
+            window.location.href = "ergebnis.html";
+        }
+    }
+    
+</script>
+</body>
+</html>
