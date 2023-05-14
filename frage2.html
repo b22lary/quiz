@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bodyFrage1Frage2">
+	<div class="quiz-container">
+		<h1>Augsburg Quiz - Frage 2</h1>
+		<hr>
+			<div id="quiz-form">
+				<div class="question">
+					<p>Was ist der "Stoinerne Mo in der Hand"?</p>
+					<div class="answers">
+						<label>
+							<input type="radio" name="Stoinerne_Mo" id="1">
+							Warze an der Hand
+						</label>
+						<label>
+							<input type="radio" name="Stoinerne_Mo" id="2">
+							Brotzeit
+						</label>
+						<label>
+							<input type="radio" name="Stoinerne_Mo" id="3">
+							Vertrocknetes Moß
+						</label>
+					</div>
+				</div>
+				<button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
+			</div>
+            <input type="text" id="nameInput" name="nameInput" value="" hidden>
+	</div>
+	
+	<script>
+        let firstButton = document.getElementById('1')
+        let secondButton = document.getElementById('2')
+        let thirdButton = document.getElementById('3')
+        var nameInput = document.getElementById('nameInput')
+    
+        function submit(){
+            if(secondButton.checked){
+                nameInput.value = "true"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage2.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage3.html";
+                }
+                
+            }else if (firstButton.checked || thirdButton.checked){
+                nameInput.value = "false"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage2.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage3.html";
+                }
+            }else{
+                alert("Bitte wählen Sie etwas aus")
+            }
+        }
+    </script>
+</body>
+</html>
