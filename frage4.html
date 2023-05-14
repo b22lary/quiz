@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset ="utf-8">
+	<meta name = "author" content = "Larissa, Nina, Lucas">
+	<title>Augsburg Quiz</title>
+</head>
+<body>
+    <p>Frage 4</p>
+	<p>Welche Nuss ist in Augsburg besonders berühmt?</p>
+
+
+		<label> Ihre Antwort: </label><input id="eingabe"><br>
+		<button onclick="submit()" type="submit">Weiter</button>
+        <input type="text" id="nameInput" name="nameInput" value="" hidden>
+
+
+    <script>
+        let eingabe = document.getElementById('eingabe')
+        var nameInput = document.getElementById('nameInput')
+    
+        function submit(){
+            if(eingabe.value){
+                
+                if(eingabe.value == "Zirbelnuss" || eingabe.value == "zirbelnuss"){
+                nameInput.value = "true"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage4.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage5.html";
+                }
+                
+            }else {
+                nameInput.value = "false"
+                
+                if (nameInput.value) {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'frage4.php');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+                    console.log(nameInput.value)
+                    window.location.href = "frage5.html";
+                }
+            }
+            }else{
+                alert("Bitte geben Sie etwas ein")
+            }
+            
+        }
+    </script>
+</body>
+</html>
