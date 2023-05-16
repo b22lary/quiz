@@ -34,7 +34,7 @@
             <td id = 'a5'></td>
         </tr>
         <tr>
-            <td>Was sind alles Figuren der Augsburger Puppenkiste?</td>
+            <td>Welche Figuren gehören zur Augsburger Puppenkiste?</td>
             <td id = 'a6'></td>
         </tr>
         <tr>
