@@ -1,38 +1,49 @@
 <!DOCTYPE html>
-<html lang="de">
-    
+<html lang="de">    
 	<head>
 		<meta charset ="utf-8">
 		<meta name = "author" content = "Larissa, Nina, Lucas">
 		<title>Augsburg Quiz</title>
-
+		<link rel="stylesheet" href="style.css">
 	</head>
+
 	<style>
 		figure{
-			display:inline-block;
-			text-align: center;
-		}
-		fieldset{
-			min-height: 500px;
-		}
-		section{
-			width:33%;
-			float: left;
-		}
-		/*nicht das fieldset auf 33% setzen, weil dann immer noch nur 2 Spalten hinpassen, weil der Rand mitgerechnet wird. Bei der Section wird nun der Inhalt (also die Fieldsets) auf 33% gestellt.*/
-		footer{
-			clear: left;
-			padding-top:5px;
-		}
-		[highlight] {
-			border-color: red;
-			border-style: dashed;
-		}
-</style>
+    display:inline-block;
+    text-align: center;
+}
+fieldset{
+    min-height: 500px;
+}
+section{
+    width:33%;
+    float: left;
+}
+footer{
+    clear: left;
+    padding-top:5px;
+}
+[highlight] {
+    border-color: red;
+    border-style: dashed;
+}
+	</style>
 
-    <body>
-        <header title="Bilder">
-		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein! Pro Kasten sind 3 Bilder nötig. Orientieren Sie sich an den Bildern, nicht an den Namen!</p>
+	<body class="bodyFragen">
+        <!-- <header title="Bilder"> -->
+		<div class="quiz-container">
+			<h1>Augsburg Quiz - Frage 7</h1>
+			<hr>
+			<div class="quiz-form">
+				<div class="question">
+					<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein! <br><br>
+					<span style="font-size:smaller">Pro Kasten sind 3 Bilder nötig. Orientieren Sie sich an den Bildern, nicht an den Namen!<span></p>
+				</div>
+				<button type="submit" value="weiter" name="weiter" onclick="submit()" id="submit-btn">Weiter</button>
+				<input type="text" id="nameInput" name="nameInput" value="false" hidden>
+			</div>
+		</div>
+		
 			<?php     
 
                 foreach (scandir('images') as $file)
@@ -72,8 +83,7 @@
 
         <footer title="Quellen">
 			
-				<input type="submit" value="weiter" name="weiter" onclick="submit()">
-				<input type="text" id="nameInput" name="nameInput" value="false" hidden>
+				
 
         </footer>
 

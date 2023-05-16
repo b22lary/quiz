@@ -161,4 +161,24 @@ input[type="radio"]{
 }
 
 
-/* Styles für die Fragen 3 und 4 */
+/* Styles für die Frage 7 */
+
+figure{
+    display:inline-block;
+    text-align: center;
+}
+fieldset{
+    min-height: 500px;
+}
+section{
+    width:33%;
+    float: left;
+}
+footer{
+    clear: left;
+    padding-top:5px;
+}
+[highlight] {
+    border-color: red;
+    border-style: dashed;
+}

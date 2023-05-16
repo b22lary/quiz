@@ -10,34 +10,36 @@
     <div class="quiz-container">
         <h1>Augsburg Quiz - Frage 6</h1>
         <hr>
-        <div class="question">
-            <p>Welche Figuren gehören zur Augsburger Puppenkiste?<br>
-                <span style="font-size: smaller;">(Bitte zwei Haken setzen)</span></p>
-            <div class="answers">
-                <label> 
-                    <input type="checkbox" id="1">
-                    Väterchen Frost 
-                </label>
-                <label> 
-                    <input type="checkbox" id="2">
-                    Rumpelstilzchen 
-                </label>
-                <label>
-                    <input type="checkbox" id="3">
-                    Das Kasperle 
-                </label>
-                <label> 
-                    <input type="checkbox" id="4">
-                    Aschenputtel 
-                </label>
-                <label>
-                    <input type="checkbox" id="5">
-                    Lukas 
-                </label>
+        <div class="quiz-form">
+            <div class="question">
+                <p>Welche Figuren gehören zur Augsburger Puppenkiste?<br>
+                    <span style="font-size: smaller;">(Bitte zwei Haken setzen)</span></p>
+                <div class="answers">
+                    <label> 
+                        <input type="checkbox" id="1">
+                        Väterchen Frost 
+                    </label>
+                    <label> 
+                        <input type="checkbox" id="2">
+                        Rumpelstilzchen 
+                    </label>
+                    <label>
+                        <input type="checkbox" id="3">
+                        Das Kasperle 
+                    </label>
+                    <label> 
+                        <input type="checkbox" id="4">
+                        Aschenputtel 
+                    </label>
+                    <label>
+                        <input type="checkbox" id="5">
+                        Lukas 
+                    </label>
+                </div>
             </div>
+            <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
+            <input type="text" id="nameInput" name="nameInput" value="" hidden>
         </div>
-        <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
-        <input type="text" id="nameInput" name="nameInput" value="" hidden>
     </div>
  	
 	<script>

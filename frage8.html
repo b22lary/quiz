@@ -4,20 +4,34 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 8</p>
-	<p>Was ist das UNESCO Weltkulturerbe von Augsburg?</p>
+<body class="bodyFragen">
+    <div class="quiz-container">
+        <h1>Augsburg Quiz - Frage 8</h1>
+        <hr>
+        <div class="quiz-form">
+            <div class="question">
+                <p>Was ist das UNESCO Weltkulturerbe von Augsburg?</p>
+                <div class="answers">
+                    <select id="myDropdown">
+                        <option value="option0" selected></option>
+                        <option value="option1">Fuggerei</option>
+                        <option value="option2">Augsburger Dom</option>
+                        <option value="option3">Wassermanagement-System</option>
+                        <option value="option4">Perlachturm</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="submit()" type="submit" id="submit-btn" value="weiter" name="weiter" >Weiter </button>
+            <input type="text" id="nameInput" name="nameInput" value="" hidden>
+        </div>
+    </div>
+
 	
-        <select id="myDropdown">
-            <option value="option0" selected></option>
-            <option value="option1">Fuggerei</option>
-            <option value="option2">Augsburger Dom</option>
-            <option value="option3">Wassermanagement-System</option>
-            <option value="option4">Perlachturm</option>
-         </select>
-         <input type="submit" value="weiter" name="weiter" onclick="submit()">
-         <input type="text" id="nameInput" name="nameInput" value="" hidden>
+	
+       
+         
 <script>
     let dropDown = document.getElementById("myDropdown")
     var nameInput = document.getElementById('nameInput')
