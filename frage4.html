@@ -4,15 +4,27 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 4</p>
-	<p>Welche Nuss ist in Augsburg besonders berühmt?</p>
+<body class="bodyFragen">
+    <div class="quiz-container">
+        <h1>Augsburg Quiz - Frage 4</h1>
+        <hr>
+        <div class="quiz-form">
+            <div class="question">
+                <p>Welche Nuss ist in Augsburg besonders berühmt?</p>
+                <div class="answers2">
+                    <label>
+                        Ihre Antwort:
+                        <input type="test" name="Eingabe" id="eingabe">
+                    </label>
+                </div>
+            </div>
+        </div>
 
-
-		<label> Ihre Antwort: </label><input id="eingabe"><br>
-		<button onclick="submit()" type="submit">Weiter</button>
+        <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
         <input type="text" id="nameInput" name="nameInput" value="" hidden>
+    </div>
 
 
     <script>

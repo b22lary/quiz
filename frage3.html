@@ -4,15 +4,32 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <p>Frage 3</p>
-	<p>In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</p>
-
-
-		<label> Ihre Antwort: </label><input type="test" name="Eingabe" id="eingabe"><br>
-		<button onclick="submit()" type="submit">Weiter</button>
+<body class="bodyFragen">
+    <div class="quiz-container">
+        <h1>Augsburg Quiz - Frage 3</h1>
+        <hr>
+        <div class="quiz-form">
+            <div class="question">
+                <p>In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</p>
+                <div class="answers">
+                    <label>
+                        Ihre Antwort:
+                        <input type="text" name="Eingabe" id="eingabe">
+                    </label>
+                </div>
+            </div>
+        </div>
+   
+        <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
         <input type="text" id="nameInput" name="nameInput" value="" hidden>
+    </div>
+   
+
+
+		
 
 
     <script>
