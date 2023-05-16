@@ -95,14 +95,14 @@
 
 
 /* Styles für die Fragen */
-.bodyFragen{
+.bodyFragen {
+    background:url(images/Hintergrund/skyline.png);
+    background-size:cover;
     font-family: sans-serif;
     font-size: 16px;
     justify-content: center;
     align-items: center;
-    height:100vh;
-    background:url(images/Hintergrund/skyline.png);
-    background-size:cover;
+    height:100vh; 
     font-family: sans-serif;
 }
 
@@ -110,7 +110,6 @@
     width:60%;
     margin: 0 auto;
     padding-top: 40px;
-    
 }
 h1{
     padding-bottom: 10px;
@@ -125,7 +124,6 @@ h1{
     padding: 20px;
     box-shadow: 0 0 10px 2px white;
     /* display:flex; //verschiebt es so, dass Frage links steht und Antworten rechts davon*/
-    
 }
 
 .question p{
@@ -155,7 +153,6 @@ input[type="radio"]{
     border:none;
     border-radius: 5px;
     font-size: 1.1rem;
-
     cursor:pointer;
     width:100%;
 }

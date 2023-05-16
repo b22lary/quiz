@@ -4,21 +4,42 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 6</p>
-	<p>Was sind alles Figuren der Augsburger Puppenkiste? (Bitte zwei Haken setzen)</p>
-
-	
-		<input type="checkbox" id="1"><label> Väterchen Frost </label><br>
-		<input type="checkbox" id="2"><label> Rumpelstilzchen </label><br>
-        <input type="checkbox" id="3"><label> Das Kasperle </label><br>
-        <input type="checkbox" id="4"><label> Aschenputtel </label><br>
-        <input type="checkbox" id="5"><label> Lukas </label><br>
-		<button onclick="submit()" type="submit">Weiter</button>
+<body class="bodyFragen">
+    <div class="quiz-container">
+        <h1>Augsburg Quiz - Frage 6</h1>
+        <hr>
+        <div class="question">
+            <p>Was sind alles Figuren der Augsburger Puppenkiste?<br>
+                <span style="font-size: smaller;">(Bitte zwei Haken setzen)</span></p>
+            <div class="answers">
+                <label> 
+                    <input type="checkbox" id="1">
+                    Väterchen Frost 
+                </label>
+                <label> 
+                    <input type="checkbox" id="2">
+                    Rumpelstilzchen 
+                </label>
+                <label>
+                    <input type="checkbox" id="3">
+                    Das Kasperle 
+                </label>
+                <label> 
+                    <input type="checkbox" id="4">
+                    Aschenputtel 
+                </label>
+                <label>
+                    <input type="checkbox" id="5">
+                    Lukas 
+                </label>
+            </div>
+        </div>
+        <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
         <input type="text" id="nameInput" name="nameInput" value="" hidden>
-
-	
+    </div>
+ 	
 	<script>
         let first = document.getElementById('1')
         let second = document.getElementById('2')
