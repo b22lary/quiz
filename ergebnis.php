@@ -64,10 +64,19 @@
             die("Verbindung fehlgeschlagen!");
         }
 
-        $sql = "SELECT * FROM quizdaten";
-        echo $sql;
+        $sql = "SELECT * FROM quizdaten WHERE benutzername = '$name'";
+        $result = mysqli_query($conn, $sql);
 
+        if(mysqli_num_rows($result)>0){
+            while($row = mysqli_fetch_assoc($result)){
+                $test = "Name: " . $row["benutzername"];
+            }
+        }
+        else{
+            echo "Keine Daten";
+        }
 
+        mysqli_close($conn);
     ?>
 </body>
 </html>
