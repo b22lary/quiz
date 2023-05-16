@@ -51,7 +51,20 @@
         session_start();
         $name = $_SESSION['name'];
         
-        
+        $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+        $username = 'root';
+        $password = '';
+        $dbh = new \PDO($dsn, $username, $password);
+
+        $conn = mysqli_connect('localhost',$username,$password,'quiz');
+
+        if(!$conn)
+        {
+            die("Verbindung fehlgeschlagen!");
+        }
+
+        $sql = "SELECT * FROM quizdaten";
+        echo $sql;
 
 
     ?>
