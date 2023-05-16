@@ -32,7 +32,7 @@
 
     <body>
         <header title="Bilder">
-		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein.! Pro Kasten sind 3 Bilder nötig.</p>
+		<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein! Pro Kasten sind 3 Bilder nötig. Orientieren Sie sich an den Bildern, nicht an den Namen!</p>
 			<?php     
 
                 foreach (scandir('images') as $file)
