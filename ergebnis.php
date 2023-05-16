@@ -50,7 +50,6 @@
     <?php
         session_start();
         $name = $_SESSION['name'];
-        echo $_SESSION['nameInput'];
         echo $name;
         
         $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
