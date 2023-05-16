@@ -4,19 +4,43 @@
 	<meta charset ="utf-8">
 	<meta name = "author" content = "Larissa, Nina, Lucas">
 	<title>Augsburg Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Frage 5</p>
-	<p>Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom? (Bitte zwei Haken setzen)</p>
-	
-
-		<input type="checkbox" id="1"><label> Jona </label><br>
-		<input type="checkbox" id="2"><label> Johann </label><br>
-        <input type="checkbox" id="3"><label> Josef </label><br>
-        <input type="checkbox" id="4"><label> David </label><br>
-        <input type="checkbox" id="5"><label> Matthäus </label><br>
-		<button onclick="submit()" type="submit">Weiter</button>
+<body class="bodyFragen">
+    <div class="quiz-container">
+        <h1>Augsburg Quiz - Frage 5</h1>
+        <hr>
+        <div class="question">
+            <p>Welche Gestalten sind <span style="font-weight:bold">nicht</span> auf dem romanischen Glasfenstern im Augsburger Dom? <br>
+                <span style="font-size: smaller;">(Bitte zwei Haken setzen)</span></p>
+            <div class="answers">
+                <label> 
+                    <input type="checkbox" id="1">
+                    Jona 
+                </label>
+                <label> 
+                    <input type="checkbox" id="2">
+                    Johann 
+                </label>
+                <label>
+                    <input type="checkbox" id="3">
+                    Josef 
+                </label>
+                <label> 
+                    <input type="checkbox" id="4">
+                    David 
+                </label>
+                <label>
+                    <input type="checkbox" id="5">
+                    Matthäus 
+                </label>
+            </div>
+        </div>
+        <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>
         <input type="text" id="nameInput" name="nameInput" value="" hidden>
+    </div>
+
+		
 
 
     <script>
