@@ -5,7 +5,7 @@
 }
 /* Index.php bzw. Styles zur Startseite/ Login */
 .bodyIndex{
-    background:url(images/skyline.png);
+    background:url(images/Hintergrund/skyline.png);
     background-size:cover;
     font-family: sans-serif;
 }
@@ -102,7 +102,7 @@
     justify-content: center;
     align-items: center;
     height:100vh;
-    background:url(images/skyline.png);
+    background:url(images/Hintergrund/skyline.png);
     background-size:cover;
     font-family: sans-serif;
 }
