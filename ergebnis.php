@@ -42,6 +42,7 @@
                 $f6 = $row["frage6"];
                 $f7 = $row["frage7"];
                 $f8 = $row["frage8"];
+                $f9 = $row["endergebnis"];
             }
             if($f1==0){
                 $f1="falsch";
@@ -99,35 +100,39 @@
             </tr>
             <tr>
                 <td>Wer hat das Rathaus gebaut?</td>
-                <td id = 'a1'>$f1</td>
+                <td>$f1</td>
             </tr>
             <tr>
                 <td>Was hat der 'Stoinerne Mo' in der Hand?</td>
-                <td id = 'a2'>$f2</td>
+                <td>$f2</td>
             </tr>
             <tr>
                 <td>In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</td>
-                <td id = 'a3'>$f3</td>
+                <td>$f3</td>
             </tr>
             <tr>
                 <td>Welche Nuss ist in Augsburg besonders berühmt?</td>
-                <td id = 'a4'>$f4</td>
+                <td>$f4</td>
             </tr>
             <tr>
                 <td>Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom?</td>
-                <td id = 'a5'>$f5</td>
+                <td>$f5</td>
             </tr>
             <tr>
                 <td>Welche Figuren gehören zur Augsburger Puppenkiste?</td>
-                <td id = 'a6'>$f6</td>
+                <td>$f6</td>
             </tr>
             <tr>
                 <td>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein!</td>
-                <td id = 'a7'>$f7</td>
+                <td>$f7</td>
             </tr>
             <tr>
                 <td>Was ist das UNESCO Weltkulturerbe von Augsburg?</td>
-                <td id = 'a8'>$f8</td>
+                <td>$f8</td>
+            </tr>
+            <tr>
+                <td>Gesamtpunktzahl</td>
+                <td>$f9</td>
             </tr>
         ";
         }

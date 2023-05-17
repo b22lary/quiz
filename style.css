@@ -192,6 +192,11 @@ footer{
     border-style: dashed;
 }
 
-table {
+/* table {
     border:1px solid black;
+} */
+
+table, th, td{
+    border:3px solid black;
+    border-collapse: collapse;
 }
