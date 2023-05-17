@@ -12,32 +12,17 @@
 			<hr>
 			<div class="quiz-form">
 				<div class="question">
-					<p>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein! <br><br>
+					<p>Ordnen Sie die untenstehenden Bilder passend per Drag and Drop ins richtige Feld ein! <br><br>
 					<span style="font-size:smaller">Pro Kasten sind 3 Bilder nötig. Orientieren Sie sich an den Bildern, nicht an den Namen!<span></p>
 				</div>
-				<button type="submit" value="weiter" name="weiter" onclick="submit()" id="submit-btn">Weiter</button>
+				<button type="submit" value="weiter" name="weiter" onclick="submit()" id="submit-btn2">Weiter</button>
 				<input type="text" id="nameInput" name="nameInput" value="false" hidden>
 			</div>
 		</div>
-		
-			<?php     
-
-                foreach (scandir('images') as $file)
-                    if (is_file("images/$file"))
-                    {
-						$basename=preg_replace('/.jfif/', '', $file);
-                        $caption=ucfirst($basename);
-
-                        echo "
-                    <figure id='$basename'>
-                    <img src='images/$file' height='100' alt='$caption'/>
-                    <figcaption>$caption</figcaption>
-                    </figure>" . PHP_EOL;
-                    }
-                //was in Java das Plus ist zum Verketten von Text ist bei PHP der Punkt "."
-            ?>
-         </header>
-         <main title="Content">
+		<main title="Content" class=bodyFrage71>
+			
+        
+         
 		 
 			<?php
                 function create_category($cat)
@@ -55,6 +40,22 @@
                 create_category('weit entfernt');
             ?>
 
+	<?php     
+
+                foreach (scandir('images') as $file)
+                    if (is_file("images/$file"))
+                    {
+						$basename=preg_replace('/.jfif/', '', $file);
+                        $caption=ucfirst($basename);
+
+                        echo "
+                    <figure id='$basename'>
+                    <img src='images/$file' height='100' alt='$caption'/>
+                    <figcaption>$caption</figcaption>
+                    </figure>" . PHP_EOL;
+                    }
+                //was in Java das Plus ist zum Verketten von Text ist bei PHP der Punkt "."
+            ?>
         </main>
 
         <footer title="Quellen">

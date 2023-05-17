@@ -138,7 +138,7 @@
                 <td class='mittig'>$f6</td>
             </tr>
             <tr>
-                <td>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein!</td>
+                <td>Ordnen Sie die untenstehenden Bilder passend per Drag and Drop ins richtige Feld ein!</td>
                 <td class='mittig'>$f7</td>
             </tr>
             <tr>
