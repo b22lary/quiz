@@ -42,8 +42,23 @@
                 $f6 = $row["frage6"];
                 $f7 = $row["frage7"];
                 $f8 = $row["frage8"];
-                $f9 = $row["endergebnis"];
             }
+            $counter = $f1 +$f2 +$f3 +$f4 +$f5 +$f6 +$f7 +$f8;
+
+            try{
+                $dsn = 'mysql:host=localhost;dbname=quiz;charset=utf8mb4';
+                $username = 'root';
+                $password = '';
+                $dbh = new \PDO($dsn, $username, $password);
+                
+                $statement = $dbh->prepare("UPDATE quizdaten SET endergebnis = $counter WHERE benutzername = '$name'");
+                $statement->execute(); 
+                
+        
+                }catch(\Throwable $e){
+        
+                }
+
             if($f1==0){
                 $f1="falsch";
             }
@@ -132,7 +147,7 @@
             </tr>
             <tr>
                 <td>Gesamtpunktzahl</td>
-                <td>$f9</td>
+                <td>$counter</td>
             </tr>
         ";
         }
