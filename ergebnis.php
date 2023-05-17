@@ -115,39 +115,39 @@
             </tr>
             <tr>
                 <td>Wer hat das Rathaus gebaut?</td>
-                <td>$f1</td>
+                <td class='mittig'>$f1</td>
             </tr>
             <tr>
                 <td>Was hat der 'Stoinerne Mo' in der Hand?</td>
-                <td>$f2</td>
+                <td class='mittig'>$f2</td>
             </tr>
             <tr>
                 <td>In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</td>
-                <td>$f3</td>
+                <td class='mittig'>$f3</td>
             </tr>
             <tr>
                 <td>Welche Nuss ist in Augsburg besonders berühmt?</td>
-                <td>$f4</td>
+                <td class='mittig'>$f4</td>
             </tr>
             <tr>
                 <td>Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom?</td>
-                <td>$f5</td>
+                <td class='mittig'>$f5</td>
             </tr>
             <tr>
                 <td>Welche Figuren gehören zur Augsburger Puppenkiste?</td>
-                <td>$f6</td>
+                <td class='mittig'>$f6</td>
             </tr>
             <tr>
                 <td>Ordnen Sie die Bilder passend per Drag and Drop ins richtige Feld ein!</td>
-                <td>$f7</td>
+                <td class='mittig'>$f7</td>
             </tr>
             <tr>
                 <td>Was ist das UNESCO Weltkulturerbe von Augsburg?</td>
-                <td>$f8</td>
+                <td class='mittig'>$f8</td>
             </tr>
             <tr>
                 <td>Gesamtpunktzahl</td>
-                <td>$counter</td>
+                <td class='mittig'>$counter</td>
             </tr>
         ";
         }
