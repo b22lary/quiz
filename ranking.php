@@ -39,7 +39,7 @@
                 echo"
                 
                     <td>" . $row['benutzername'] ."</td>
-                    <td>" . $row['endergebnis'] . " / 8</td>
+                    <td class='mittig'>" . $row['endergebnis'] . " / 8</td>
                 </tr>
                 ";
             }

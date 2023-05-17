@@ -95,7 +95,7 @@
 
 
 /* Styles für die Fragen */
-.bodyFragen {
+.bodyFragen{
     background:url(images/Hintergrund/skyline.png);
     background-size:cover;
     font-family: sans-serif;
@@ -162,7 +162,7 @@ input[type="radio"]{
 
 
 /* Styles für die Frage 7 */
-.bodyFragen {
+.bodyFrage7{
     font-family: sans-serif;
     font-size: 16px;
     justify-content: center;
@@ -170,7 +170,41 @@ input[type="radio"]{
     height:100vh; 
     font-family: sans-serif;
 }
+.bodyFrage71{
+    font-family: sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    height:100vh; 
+    font-family: sans-serif;
+    margin-left:5%;
+    margin-right:5%;
+}
+#submit-btn2{
+    display:block;
+    margin-bottom: 20px;
+    padding: 1.1rem;
+    background: #4caf50;
+    color:#fff;
+    border:none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor:pointer;
+    width:100%;
 
+}
+#submit-btn2:hover{
+    background:rgb(192, 195, 190);
+}
+.bodyFrage7 {
+    font-family: sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    height:100vh; 
+    font-family: sans-serif;
+   
+}
 figure{
     display:inline-block;
     text-align: center;
@@ -180,6 +214,7 @@ fieldset{
     min-height: 500px;
 }
 section{
+    margin-top:2%;
     width:33%;
     float: left;
 }
@@ -210,6 +245,16 @@ table, th, td{
     text-align:center;
 }
 
+#gesamtpunkte {
+    font-weight:bold;
+}
+
 th{
     background-color: #ff2f2f;
+}
+
+
+/* Styles für die Frage 8 */
+#myDropdown {
+    margin-left:110px;
 }
