@@ -192,11 +192,23 @@ footer{
     border-style: dashed;
 }
 
-/* table {
+table {
     border:1px solid black;
-} */
+    margin-top:25px;
+    margin-left:10%;
+
+} 
 
 table, th, td{
     border:3px solid black;
     border-collapse: collapse;
+    padding: 5px;
+}
+
+/* td{
+    text-align:center;
+} */
+
+th{
+    background-color: #ff2f2f;
 }
