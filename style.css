@@ -196,6 +196,7 @@ table {
     border:1px solid black;
     margin-top:25px;
     margin-left:10%;
+    margin-bottom: 15px;
 
 } 
 
@@ -205,9 +206,9 @@ table, th, td{
     padding: 5px;
 }
 
-/* td{
+.mittig {
     text-align:center;
-} */
+}
 
 th{
     background-color: #ff2f2f;
