@@ -245,6 +245,10 @@ table, th, td{
     text-align:center;
 }
 
+#gesamtpunkte {
+    font-weight:bold;
+}
+
 th{
     background-color: #ff2f2f;
 }

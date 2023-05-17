@@ -146,8 +146,8 @@
                 <td class='mittig'>$f8</td>
             </tr>
             <tr>
-                <td>Gesamtpunktzahl</td>
-                <td class='mittig'>$counter / 8</td>
+                <td id=gesamtpunkte>Gesamtpunktzahl</td>
+                <td class='mittig' id=gesamtpunkte>$counter / 8</td>
             </tr>
         ";
         }
