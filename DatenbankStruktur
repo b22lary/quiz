@@ -10,5 +10,4 @@ CREATE TABLE quizdaten(
     frage8 boolean,
     endergebnis int,
     PRIMARY KEY(benutzername)
-    ORDER BY(endergebnis) DESC
 )

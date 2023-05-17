@@ -147,7 +147,7 @@
             </tr>
             <tr>
                 <td>Gesamtpunktzahl</td>
-                <td class='mittig'>$counter</td>
+                <td class='mittig'>$counter / 8</td>
             </tr>
         ";
         }
