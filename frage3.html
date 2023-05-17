@@ -35,19 +35,19 @@
     <script>
         let eingabe = document.getElementById('eingabe')
         var nameInput = document.getElementById('nameInput')
-    
+        
         function submit(){
-            if(eingabe.value){
+            if(eingabe.value && !isNaN(eingabe.value)){
                 
                 if(eingabe.value == "1521"){
                 nameInput.value = "true"
-                
+                console.log(isNaN(eingabe.value))
                 if (nameInput.value) {
                     let xhr = new XMLHttpRequest();
                     xhr.open('POST', 'frage3.php');
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
-                    console.log(nameInput.value)
+                    
                     window.location.href = "frage4.html";
                 }
                 
@@ -63,8 +63,11 @@
                     window.location.href = "frage4.html";
                 }
             }
-            }else{
+            }else if (eingabe.value == ""){
+                console.log(eingabe.value)
                 alert("Bitte geben sie etwas ein")
+            }else{
+                alert("Bitte geben sie eine Zahl ein!")
             }
             
         }

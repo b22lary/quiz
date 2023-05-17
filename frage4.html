@@ -31,7 +31,7 @@
         var nameInput = document.getElementById('nameInput')
     
         function submit(){
-            if(eingabe.value){
+            if(eingabe.value && isNaN(eingabe.value)){
                 
                 if(eingabe.value == "Zirbelnuss" || eingabe.value == "zirbelnuss"){
                 nameInput.value = "true"
@@ -57,8 +57,10 @@
                     window.location.href = "frage5.html";
                 }
             }
-            }else{
+            }else if(eingabe.value == ""){
                 alert("Bitte geben Sie etwas ein")
+            }else{
+                alert("Bitte geben Sie keine Zahlen ein!")
             }
             
         }

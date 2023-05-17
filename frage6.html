@@ -48,11 +48,27 @@
         let third = document.getElementById('3')
         let fourth = document.getElementById('4')
         let fifth = document.getElementById('5')
+        let counter = 0
         var nameInput = document.getElementById('nameInput')
+        var array = [first, second, third, fourth, fifth]
 
         console.log(first)
     
         function submit(){
+
+            array.forEach(element => {
+            if(element.checked){
+                counter++;
+            }
+            });
+            console.log(counter)
+            if(counter != 2){
+                counter = 0;
+                alert("bitte wählen Sie 2 Checkboxen aus")
+                return;
+            }
+
+
             if(first.checked || second.checked || third.checked || fourth.checked || fifth.checked){
                 
                 if(!first.checked && !second.checked && third.checked && !fourth.checked && fifth.checked){
