@@ -10,6 +10,7 @@
     <div class="quiz-container">
         <h1>Augsburg Quiz - Ergebnis</h1>
         <hr>
+        <table>
 
     <?php
         session_start();
@@ -91,7 +92,7 @@
                 $f8="richtig";
             }
             echo"
-        <table> 
+        
             <tr>
                 <th>Frage</th>
                 <th>Ergebnis</th>
@@ -128,7 +129,7 @@
                 <td>Was ist das UNESCO Weltkulturerbe von Augsburg?</td>
                 <td id = 'a8'>$f8</td>
             </tr>
-        </table> ";
+        ";
         }
         else{
             echo "Keine Daten";
@@ -136,5 +137,6 @@
 
         mysqli_close($conn);
     ?>
+    </table>
 </body>
 </html>
