@@ -114,40 +114,40 @@
                 <th>Ergebnis</th>
             </tr>
             <tr>
-                <td>Wer hat das Rathaus gebaut?</td>
+                <td>1: Wer hat das Rathaus gebaut?</td>
                 <td class='mittig'>$f1</td>
             </tr>
             <tr>
-                <td>Was hat der 'Stoinerne Mo' in der Hand?</td>
+                <td>2: Was hat der 'Stoinerne Mo' in der Hand?</td>
                 <td class='mittig'>$f2</td>
             </tr>
             <tr>
-                <td>In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</td>
+                <td>3: In welchem Jahr wurde die Fuggerei von Jakob Fugger gestiftet?</td>
                 <td class='mittig'>$f3</td>
             </tr>
             <tr>
-                <td>Welche Nuss ist in Augsburg besonders berühmt?</td>
+                <td>4: Welche Nuss ist in Augsburg besonders berühmt?</td>
                 <td class='mittig'>$f4</td>
             </tr>
             <tr>
-                <td>Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom?</td>
+                <td>5: Welche Gestalten sind nicht auf dem romanischen Glasfenstern im Augsburger Dom?</td>
                 <td class='mittig'>$f5</td>
             </tr>
             <tr>
-                <td>Welche Figuren gehören zur Augsburger Puppenkiste?</td>
+                <td>6: Welche Figuren gehören zur Augsburger Puppenkiste?</td>
                 <td class='mittig'>$f6</td>
             </tr>
             <tr>
-                <td>Ordnen Sie die untenstehenden Bilder passend per Drag and Drop ins richtige Feld ein!</td>
+                <td>7: Ordnen Sie die untenstehenden Bilder passend per Drag and Drop ins richtige Feld ein!</td>
                 <td class='mittig'>$f7</td>
             </tr>
             <tr>
-                <td>Was ist das UNESCO Weltkulturerbe von Augsburg?</td>
+                <td>8: Was ist das UNESCO Weltkulturerbe von Augsburg?</td>
                 <td class='mittig'>$f8</td>
             </tr>
             <tr>
                 <td>Gesamtpunktzahl</td>
-                <td class='mittig'>$counter</td>
+                <td class='mittig'>$counter / 8</td>
             </tr>
         ";
         }
