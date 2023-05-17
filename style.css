@@ -191,3 +191,7 @@ footer{
     border-color: red;
     border-style: dashed;
 }
+
+table{
+    border:1px solid black;
+}
