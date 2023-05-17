@@ -158,5 +158,12 @@
         mysqli_close($conn);
     ?>
     </table>
+    <button onclick="submit()" type="submit" id="submit-btn">Weiter</button>   
+    <input type="text" id="nameInput" name="nameInput" value="" hidden>
+<script>
+    function submit(){
+        window.location.href = "ranking.php";
+    }
+</script>
 </body>
 </html>
