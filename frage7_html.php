@@ -6,31 +6,7 @@
 		<title>Augsburg Quiz</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
-
-	<style>
-		figure{
-    display:inline-block;
-    text-align: center;
-}
-fieldset{
-    min-height: 500px;
-}
-section{
-    width:33%;
-    float: left;
-}
-footer{
-    clear: left;
-    padding-top:5px;
-}
-[highlight] {
-    border-color: red;
-    border-style: dashed;
-}
-	</style>
-
-	<body class="bodyFragen">
-        <!-- <header title="Bilder"> -->
+	<body class="bodyFrage7">
 		<div class="quiz-container">
 			<h1>Augsburg Quiz - Frage 7</h1>
 			<hr>

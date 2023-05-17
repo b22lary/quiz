@@ -39,8 +39,12 @@
                     }
                 };
                 xhr.send('nameInput=' + encodeURIComponent(eingabe.value));
+                window.location.href = "frage1.html";
             }
-            window.location.href = "frage1.html";
+            else{
+                alert("Bitte geben Sie einen Namen ein!")
+            }
+           
         }
     </script>
 </body>
