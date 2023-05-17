@@ -95,7 +95,7 @@
 
 
 /* Styles für die Fragen */
-.bodyFrage{
+.bodyFragen{
     background:url(images/Hintergrund/skyline.png);
     background-size:cover;
     font-family: sans-serif;
@@ -205,7 +205,6 @@ input[type="radio"]{
     font-family: sans-serif;
    
 }
-
 figure{
     display:inline-block;
     text-align: center;
@@ -248,4 +247,10 @@ table, th, td{
 
 th{
     background-color: #ff2f2f;
+}
+
+
+/* Styles für die Frage 8 */
+#myDropdown {
+    margin-left:110px;
 }
