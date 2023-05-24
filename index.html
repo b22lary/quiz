@@ -25,6 +25,7 @@
 
     <script>
         let eingabe = document.querySelector('#name')
+        
 
         function submit(){
             if (eingabe.value) {
@@ -46,6 +47,13 @@
             }
            
         }
+
+        eingabe.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submit();
+            }
+        });
     </script>
 </body>
 </html>

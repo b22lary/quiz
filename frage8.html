@@ -59,6 +59,13 @@
             window.location.href = "ergebnis.php";
         }
     }
+
+    document.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submit();
+            }
+        });
     
 </script>
 </body>

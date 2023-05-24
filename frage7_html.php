@@ -220,6 +220,13 @@
 			console.log(array);	
 		}
 
+		document.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submit();
+            }
+        });
+
 		</script>
 
 

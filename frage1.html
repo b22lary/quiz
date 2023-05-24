@@ -72,6 +72,13 @@
                 alert("Bitte wählen sie etwas aus")
             }
         }
+
+        document.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submit();
+            }
+        });
     </script>
 </body>
 </html>
