@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jun 2023 um 09:09
+-- Erstellungszeit: 14. Jun 2023 um 09:18
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -46,7 +46,6 @@ CREATE TABLE `quizdaten` (
 
 INSERT INTO `quizdaten` (`benutzername`, `frage1`, `frage2`, `frage3`, `frage4`, `frage5`, `frage6`, `frage7`, `frage8`, `endergebnis`) VALUES
 ('Barbara', 1, 1, 1, 1, 1, 1, 1, 1, 8),
-('hallo', 0, 1, 1, 1, 0, 0, 0, 1, 4),
 ('Luca', 0, 0, 0, 0, 0, 0, 0, 0, 0),
 ('Susanne', 1, 1, 1, 1, 0, 0, 0, 0, 4);
 
