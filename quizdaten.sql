@@ -28,7 +28,7 @@ CREATE DATABASE quiz;
 -- Tabellenstruktur für Tabelle `quizdaten`
 --
 
-CREATE TABLE `quizdaten` (
+CREATE TABLE quiz.`quizdaten` (
   `benutzername` varchar(50) NOT NULL,
   `frage1` tinyint(1) DEFAULT NULL,
   `frage2` tinyint(1) DEFAULT NULL,
