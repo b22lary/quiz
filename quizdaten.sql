@@ -45,7 +45,7 @@ CREATE TABLE quiz.`quizdaten` (
 -- Daten für Tabelle `quizdaten`
 --
 
-INSERT INTO `quizdaten` (`benutzername`, `frage1`, `frage2`, `frage3`, `frage4`, `frage5`, `frage6`, `frage7`, `frage8`, `endergebnis`) VALUES
+INSERT INTO quiz.`quizdaten` (`benutzername`, `frage1`, `frage2`, `frage3`, `frage4`, `frage5`, `frage6`, `frage7`, `frage8`, `endergebnis`) VALUES
 ('Barbara', 1, 1, 1, 1, 1, 1, 1, 1, 8),
 ('Luca', 0, 0, 0, 0, 0, 0, 0, 0, 0),
 ('Susanne', 1, 1, 1, 1, 0, 0, 0, 0, 4);
@@ -57,7 +57,7 @@ INSERT INTO `quizdaten` (`benutzername`, `frage1`, `frage2`, `frage3`, `frage4`,
 --
 -- Indizes für die Tabelle `quizdaten`
 --
-ALTER TABLE `quizdaten`
+ALTER TABLE quiz.`quizdaten`
   ADD PRIMARY KEY (`benutzername`);
 COMMIT;
 
