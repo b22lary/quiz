@@ -66,166 +66,150 @@
 
         <script>
 			var x;
-			var y;
-			var array = [false, false, false, false, false, false, false, false, false];
-			var allesRichtig = false;
-			let eingabe = document.getElementById("nameInput")
+var y;
+var array = [false, false, false, false, false, false, false, false, false];
+var allesRichtig = false;
+let eingabe = document.getElementById("nameInput")
 
-			let fieldsets=document.querySelectorAll('fieldset')
-			let figures=document.querySelectorAll('figure')
-			//dragstart (Beginn einer Drag&Drop Operation)
-			//dragover (Zeigt an, dass ein gedraggedtes Objekt über einem potentiellen Ziel ist)
-			//drop (Element wird fallen gelassen, über passendem Ziel)
+let fieldsets = document.querySelectorAll('fieldset')
+let figures = document.querySelectorAll('figure')
 
-			figures.forEach(item =>{
-			item.setAttribute('draggable', true)
-			item.addEventListener('dragstart', event =>{
-					event.dataTransfer.setData('application/figure-id', item.id)
-				})
-			})
+figures.forEach(item => {
+    item.setAttribute('draggable', true)
+    item.addEventListener('dragstart', event => {
+        event.dataTransfer.setData('application/figure-id', item.id)
+    })
+})
 
-			fieldsets.forEach(item=>{
-				item.addEventListener('dragover', event =>
-				event.preventDefault())
+fieldsets.forEach(item => {
+    item.addEventListener('dragover', event =>
+        event.preventDefault())
 
-				item.addEventListener('dragenter', event =>
-				item.setAttribute('highlight', true))
+    item.addEventListener('dragenter', event =>
+        item.setAttribute('highlight', true))
 
-				item.addEventListener('dragleave', event =>
-				item.removeAttribute('highlight'))
+    item.addEventListener('dragleave', event =>
+        item.removeAttribute('highlight'))
 
-				item.addEventListener('drop', event =>{
-					//item.removeAttribute('highlight')
-					let id= event.dataTransfer.getData('application/figure-id')
-					let stadt=document.querySelector('#Stadt Augsburg')
-					if (id){
-						item.appendChild(document.getElementById(id))
-								
-						function getOffset( el ) {
-							var _x = 0;
-							var _y = 0;
-							while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-								_x += el.offsetLeft - el.scrollLeft;
-								_y += el.offsetTop - el.scrollTop;
-								el = el.offsetParent;
-							}
-							return { top: _y, left: _x };
-						}
+    item.addEventListener('drop', event => {
+        let id = event.dataTransfer.getData('application/figure-id')
+        let stadt = document.querySelector('#Stadt Augsburg')
+        if (id) {
+            item.appendChild(document.getElementById(id))
 
-						x = getOffset( document.getElementById(id) ).left;
-						y = getOffset( document.getElementById(id) ).top;
-						console.log("x: "+ x);
-						console.log("y: "+ y);
-
-						checkCorrect(id);
-
-						document.getElementById("nameInput").value = array.every(element => element === true);
-						eingabe = nameInput;
-
-						console.log(eingabe)
-						}	
-					})
-				})
-
-
-				function submit(){
-					
-					console.log(eingabe)
-
-					let xhr = new XMLHttpRequest();
-					xhr.open('POST', 'frage7.php');
-					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-					xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
-					console.log(nameInput.value)
-					window.location.href = "frage8.html";
-						
-				}
-
-
-			function checkCorrect(id){
-				switch(id) {
-  					case "Fuggerei":
-						if (x < 300) {
-  							array[0]=true;
-						}
-						else{
-							array[0]=false;
-						}
-					break;
- 					case "Maiskolben":
-						if (x < 300) {
- 					  		array[1]=true;
-						}
-						else{
-							array[1]=false;
-						}
-   					 break;
- 					case "Rathaus":
-						if (x < 300) {
-							array[2]=true;
-						}
-						else{
-							array[2]=false;
-						}
-   					 break;
-					case "Café Müller":
-						if (x >= 300 && x < 850){
-  							array[3]=true;
-						}
-						else{
-							array[3]=false;
-						}
-					break;
- 					case "Mandichosee":
-						if (x >= 300 && x < 850){
-							array[4]=true;
-						}
-						else{
-							array[4]=false;
-						}
-   					break;
- 					case "Mercateum":
-						if (x >= 300 && x < 850){
-							array[5]=true;
-						}
-						else{
-							array[5]=false;
-						}
-   					break;
-					case "Altstadt":
-						if (x >= 700){
-  							array[6]=true;
-						}
-						else{
-							array[6]=false;
-						}
-					break;
- 					case "Kirche":
-						if (x >= 700){
-							array[7]=true;
-						}
-						else{
-							array[7]=false;
-						}
-   					break;
- 					case "Stadtbrunnen":
-						if (x >= 700){
-							array[8]=true;
-						}
-						else{
-							array[8]=false;
-						}
-   					break;
-			}
-			console.log(array);	
-		}
-
-		document.addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                submit();
+            function getOffset(el) {
+                var rect = el.getBoundingClientRect();
+                var bodyRect = document.body.getBoundingClientRect();
+                var top = (rect.top - bodyRect.top) / (window.innerHeight - bodyRect.top) * 100;
+                var left = (rect.left - bodyRect.left) / (window.innerWidth - bodyRect.left) * 100;
+                return { top: top, left: left };
             }
-        });
+
+            var offset = getOffset(document.getElementById(id));
+            x = offset.left;
+            y = offset.top;
+            console.log("x: " + x);
+            console.log("y: " + y);
+
+            checkCorrect(id);
+
+            document.getElementById("nameInput").value = array.every(element => element === true);
+            eingabe = nameInput;
+
+            console.log(eingabe)
+        }
+    })
+})
+
+function submit() {
+
+    console.log(eingabe)
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'frage7.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('nameInput=' + encodeURIComponent(nameInput.value));
+    console.log(nameInput.value)
+    window.location.href = "frage8.html";
+
+}
+
+function checkCorrect(id) {
+    switch (id) {
+        case "Fuggerei":
+            if (x < 30) {
+                array[0] = true;
+            } else {
+                array[0] = false;
+            }
+            break;
+        case "Maiskolben":
+            if (x < 30) {
+                array[1] = true;
+            } else {
+                array[1] = false;
+            }
+            break;
+        case "Rathaus":
+            if (x < 30) {
+                array[2] = true;
+            } else {
+                array[2] = false;
+            }
+            break;
+        case "Café Müller":
+            if (x >= 30 && x < 85) {
+                array[3] = true;
+            } else {
+                array[3] = false;
+            }
+            break;
+        case "Mandichosee":
+            if (x >= 30 && x < 85) {
+                array[4] = true;
+            } else {
+                array[4] = false;
+            }
+            break;
+        case "Mercateum":
+            if (x >= 30 && x < 85) {
+                array[5] = true;
+            } else {
+                array[5] = false;
+            }
+            break;
+        case "Altstadt":
+            if (x >= 70) {
+                array[6] = true;
+            } else {
+                array[6] = false;
+            }
+            break;
+        case "Kirche":
+            if (x >= 70) {
+                array[7] = true;
+            } else {
+                array[7] = false;
+            }
+            break;
+        case "Stadtbrunnen":
+            if (x >= 70) {
+                array[8] = true;
+            } else {
+                array[8] = false;
+            }
+            break;
+    }
+    console.log(array);
+}
+
+document.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        submit();
+    }
+});
+
 
 		</script>
 
